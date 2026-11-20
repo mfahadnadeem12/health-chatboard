@@ -1,0 +1,21 @@
+{
+  "name": "health-chatboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Community health Q&A board with an AI assistant. Sign in with Google to post; connect your own OpenRouter account to use the assistant.",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,client -c blue,green \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w client",
+    "start": "npm run start -w server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "dependencies": {
+    "mongodb": "^7.8.0"
+  }
+}
